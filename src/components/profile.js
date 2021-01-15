@@ -21,7 +21,7 @@ export const Profiles = ({ profiles, loading} ) => {
 
     const [search, setSearch] = useState("");
     const [query, setQuery] = useState('');
-    const [filter, setFilter] =useState('');
+    const [filter, setFilter] =useState(profiles);
 
     const updateSearch = e =>{
         setSearch(e.target.value);
@@ -37,12 +37,32 @@ export const Profiles = ({ profiles, loading} ) => {
         let filteredWord = e.target.value;
 
         if(filteredWord === 'All'){
-            setFilter()
+            setFilter(profiles)
+            console.log(profiles);
         }
-    }
+        else if(filteredWord === 'Female'){
+            const filtered = profiles.filter(item => item.Gender === 'Female')
+            setFilter(filtered)
+            console.log(filtered);
+
+        }
+        else if(filteredWord === 'Male'){
+            const filtered = profiles.filter(item => item.Gender === 'Male')
+            setFilter(filtered);
+            console.log(filtered);
+
+        }
+        else if(filteredWord === '"Prefer to skip"'){
+            const filtered = profiles.filter(item => item.Gender === 'Prefer to skip')
+            setFilter(filtered);
+            console.log(filtered);
+
+        }
+        
+    };
 
     if(loading){
-        return <Spinner animation="border" className='mx-auto' role="status">
+        return <Spinner animation="border" className='mx-auto text-center' role="status">
                     <span className="sr-only">Loading...</span>
                 </Spinner>;
     }
@@ -61,22 +81,22 @@ export const Profiles = ({ profiles, loading} ) => {
                     <h6>Show Users</h6>
 
                     <div className='row'>
-                        <div className='col-lg-3 icons'>
+                        <button className='col-lg-3 icons' value='All' onClick={handleFilter} >
                             <BsFillPersonLinesFill/>
-                            <p> All users</p>
-                        </div>
-                        <div className='col-lg-3 icons'>
+                             All users
+                        </button>
+                        <button className='col-lg-3 icons' onClick={handleFilter}  value='"Prefer to skip"'>
                             <BsBagFill/>
-                            <p className='pad1y'>Payment Method</p>
-                        </div>
-                        <div className='col-lg-3 icons pt-3'>
+                            Prefer to skip
+                        </button>
+                        <button className='col-lg-3 icons pt-3' value='Female' onClick={handleFilter}>
                             <FaFemale/>
-                           <p>Female</p>
-                        </div>
-                        <div className='col-lg-3 icons pt-3'>
+                         Female
+                        </button>
+                        <button className='col-lg-3 icons pt-3' value='Male' onClick={handleFilter}>
                             <FaMale/>
-                           <p>Male</p>
-                        </div>
+                           Male
+                        </button>
                     </div>
                 </div>
             </div>
