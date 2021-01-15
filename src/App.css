@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,600;1,700&display=swap');
+
+*{
+  font-family: 'Nunito', sans-serif;
+}
+
+.App {
+  text-align: center;
+}
+
+.profile{
+  background: #262A41 0% 0% no-repeat padding-box;
+  opacity: 1;
+}
+
+.form_search{
+  margin: 3rem 0 3rem 0;
+
+}
+
+button.form_button.btn.btn-outline-success {
+  background: #fff 0% 0% no-repeat ;
+  color: #262A41;
+  border: 1px solid #3C3F54;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+
+}
+
+input.mr-sm-2.search_bar.form-control{
+  width: 70% !important;
+  background: #3C3F54 0% 0% no-repeat ;
+  border: 1px solid #3C3F54;
+  border-top-left-radius: 28px;
+  border-bottom-left-radius: 28px;
+  opacity: 1;
+  padding: 1rem;
+  color: #fff;
+
+}
+
+input.mr-sm-2.search_bar.form-control::placeholder{
+  letter-spacing: -0.02px;
+  color: #FFFFFF;
+  opacity: 0.7;
+}
+
+p.details {
+  color: white;
+  font-size: 18px;
+}
+
+.category{
+  margin-top: 4rem;
+}
+
+.category h6{
+  color: #fff;
+  font-size: 22px;
+}
+
+.icons{
+  background: #7946C1 0% 0% no-repeat padding-box;
+  border-radius: 28px;
+  opacity: 1;
+  color: #fff;
+  font-size: 20px;
+  margin: 10px;
+  text-align: center;
+}
+
+.row .pad1y{
+  font-size: 18px;
+}
+
+.icons svg{
+  width: 23px;
+  height: 51px;
+}
+
+.col-lg-8.results {
+  margin-top: 3rem;
+}
+
+.col-lg-4.user {
+  border-radius: 20px;
+  margin-bottom: 2.1rem;
+  box-shadow: 10px 10px 40px #0000000D;
+}
+
+p.email {
+  font-size: 13.5px;
+}
+
+svg#profile_email{
+  font-size: 16px;
+}
+
+svg.profile_icons {
+  font-size: 20px;
+}
+
