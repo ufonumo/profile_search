@@ -9,7 +9,6 @@ const App = ()  => {
 
   const API_BASE = 'https://api.enye.tech/v1/challenge/records';
 
-
   let [profiles, setProfiles] = useState([]);
   let [loading, setloading] = useState(false);
   let [currentPage, setCurrentPage] = useState(1);
@@ -49,19 +48,16 @@ const App = ()  => {
     else if(filteredWord === 'Female'){
         const filtered = profiles.filter(item => item.Gender === 'Female')
         setProfiles(filtered)
-        console.log(filtered);
     }
     else if(filteredWord === 'Male'){
         const filtered = profiles.filter(item => item.Gender === 'Male')
         setProfiles(filtered);
-        console.log(filtered);
 
     }
     else if(filteredWord === '"Prefer to skip"'){
         const filtered = profiles.filter(item => item.Gender === 'Prefer to skip')
         setProfiles(filtered);
         console.log(filtered);
-
     }
     
 };
