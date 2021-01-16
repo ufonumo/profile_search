@@ -17,52 +17,24 @@ import { RiSecurePaymentFill } from "react-icons/ri";
 import { BiCreditCard } from "react-icons/bi";
 
 
-export const Profiles = ({ profiles, loading} ) => {
+export const Profiles = ({ profiles, loading, handleFilter} ) => {
 
     const [search, setSearch] = useState("");
     const [query, setQuery] = useState('');
-    const [filter, setFilter] =useState(profiles);
 
     const updateSearch = e =>{
         setSearch(e.target.value);
       };
     
-      const getSearch = e =>{
-        e.preventDefault();
-        setQuery(search);
-        setSearch('');
-      };
-
-    const handleFilter = (e) =>{
-        let filteredWord = e.target.value;
-
-        if(filteredWord === 'All'){
-            setFilter(profiles)
-            console.log(profiles);
-        }
-        else if(filteredWord === 'Female'){
-            const filtered = profiles.filter(item => item.Gender === 'Female')
-            setFilter(filtered)
-            console.log(filtered);
-
-        }
-        else if(filteredWord === 'Male'){
-            const filtered = profiles.filter(item => item.Gender === 'Male')
-            setFilter(filtered);
-            console.log(filtered);
-
-        }
-        else if(filteredWord === '"Prefer to skip"'){
-            const filtered = profiles.filter(item => item.Gender === 'Prefer to skip')
-            setFilter(filtered);
-            console.log(filtered);
-
-        }
-        
+    const getSearch = e =>{
+    e.preventDefault();
+    setQuery(search);
+    setSearch('');
     };
 
+
     if(loading){
-        return <Spinner animation="border" className='mx-auto text-center' role="status">
+        return <Spinner animation="border" className=' text-center' role="status">
                     <span className="sr-only">Loading...</span>
                 </Spinner>;
     }

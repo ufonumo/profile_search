@@ -15,13 +15,11 @@ const App = ()  => {
   let [currentPage, setCurrentPage] = useState(1);
   let [profilePerPage] = useState(20);
 
-
   useEffect(()=>{
     const getProfiles = async () =>{
       setloading(true)
       const response = await fetch(API_BASE);
       let data = await response.json();
-      console.log(data.records.profiles);
       setProfiles(data.records.profiles);
       setloading(false)
     }
@@ -39,13 +37,42 @@ const App = ()  => {
     setCurrentPage(pageNumber)
   };
 
+  const handleFilter = (e) =>{
+    let filteredWord = e.target.value;
+
+    if(filteredWord === 'All'){
+      setProfiles(profiles)
+        console.log(profiles);
+        return profiles
+        
+    }
+    else if(filteredWord === 'Female'){
+        const filtered = profiles.filter(item => item.Gender === 'Female')
+        setProfiles(filtered)
+        console.log(filtered);
+    }
+    else if(filteredWord === 'Male'){
+        const filtered = profiles.filter(item => item.Gender === 'Male')
+        setProfiles(filtered);
+        console.log(filtered);
+
+    }
+    else if(filteredWord === '"Prefer to skip"'){
+        const filtered = profiles.filter(item => item.Gender === 'Prefer to skip')
+        setProfiles(filtered);
+        console.log(filtered);
+
+    }
+    
+};
+
   return (
     <div className="container">
       <h1 className='text-center'>Profiles</h1>
 
       <div >
 
-        <Profiles profiles={currentProfiles} loading={loading}/>
+        <Profiles profiles={currentProfiles} loading={loading} handleFilter={handleFilter}/>
         <Pagination
          profilePerPage={profilePerPage}
          totalProfiles={profiles.length}
