@@ -55,19 +55,19 @@ export const Profiles = ({ profiles, loading, handleFilter} ) => {
                     <div className='row'>
                         <button className='col-lg-3 icons' value='All' onClick={handleFilter} >
                             <BsFillPersonLinesFill/>
-                             All users
+                            <p>All users</p> 
                         </button>
                         <button className='col-lg-3 icons' onClick={handleFilter}  value='"Prefer to skip"'>
                             <BsBagFill/>
-                            Prefer to skip
+                           <p>Prefer to skip </p> 
                         </button>
                         <button className='col-lg-3 icons pt-3' value='Female' onClick={handleFilter}>
                             <FaFemale/>
-                         Female
+                         <p>Female</p> 
                         </button>
                         <button className='col-lg-3 icons pt-3' value='Male' onClick={handleFilter}>
                             <FaMale/>
-                           Male
+                          <p>Male</p> 
                         </button>
                     </div>
                 </div>
@@ -83,9 +83,9 @@ export const Profiles = ({ profiles, loading, handleFilter} ) => {
                         }
                     }).map( profile => (
 
-                        <div key={profile.Email} className='col-lg-4 user'>
+                        <div key={profile.Email} className='col-lg-4 user middle page_card'>
 
-                            <div  key={profile.Email} className='list-group-item'>
+                            <div  key={profile.Email} className='list-group-item front'>
                                 <p> <b><HiUser className="profile_icons"/></b> :  {profile.FirstName} {profile.LastName} </p>
                                 <p> <RiGenderlessFill className="profile_icons"/> : {profile.Gender}</p>
                                 <p className='email'>
@@ -95,6 +95,19 @@ export const Profiles = ({ profiles, loading, handleFilter} ) => {
                                 <p><BiCreditCard className="profile_icons"/> : {profile.CreditCardType}</p>
                                 <p> <RiSecurePaymentFill className="profile_icons"/> : {profile.PaymentMethod}</p>
 
+                            </div>
+
+                            <div className='back back_content'>
+                                <div className=' middle middle_content'>
+                                <p> <b><HiUser className="profile_icons"/></b> :  {profile.FirstName} {profile.LastName} </p>
+                                <p> <RiGenderlessFill className="profile_icons"/> : {profile.Gender}</p>
+                                <p className='email'>
+                                     <MdEmail id='profile_email' className="profile_icons"/> :  {profile.Email}</p>
+                                <p>
+                                    <FaPhoneSquareAlt className="profile_icons"/> : {profile.PhoneNumber}</p>
+                                <p><BiCreditCard className="profile_icons"/> : {profile.CreditCardType}</p>
+                                <p> <RiSecurePaymentFill className="profile_icons"/> : {profile.PaymentMethod}</p>
+                                </div>
                             </div>
                         </div>
 
