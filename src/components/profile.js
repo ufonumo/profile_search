@@ -15,6 +15,10 @@ import { FaPhoneSquareAlt } from "react-icons/fa";
 import { RiGenderlessFill } from "react-icons/ri";
 import { RiSecurePaymentFill } from "react-icons/ri";
 import { BiCreditCard } from "react-icons/bi";
+import { BiUserCircle } from "react-icons/bi";
+import { FaFirefoxBrowser } from "react-icons/fa";
+import { ImListNumbered } from "react-icons/im";
+import { CgBrowse } from "react-icons/cg";
 
 
 export const Profiles = ({ profiles, loading, handleFilter} ) => {
@@ -97,16 +101,15 @@ export const Profiles = ({ profiles, loading, handleFilter} ) => {
 
                             </div>
 
-                            <div className='back back_content'>
-                                <div className=' middle middle_content'>
-                                <p> <b><HiUser className="profile_icons"/></b> :  {profile.FirstName} {profile.LastName} </p>
-                                <p> <RiGenderlessFill className="profile_icons"/> : {profile.Gender}</p>
+                            <div className='back list-group-item back_content'>
+                                <div className=' middle middle_content pt-4'>
+                                <p> <b><ImListNumbered className="profile_icons"/></b> :  {profile.CreditCardNumber}  </p>
                                 <p className='email'>
-                                     <MdEmail id='profile_email' className="profile_icons"/> :  {profile.Email}</p>
-                                <p>
-                                    <FaPhoneSquareAlt className="profile_icons"/> : {profile.PhoneNumber}</p>
-                                <p><BiCreditCard className="profile_icons"/> : {profile.CreditCardType}</p>
-                                <p> <RiSecurePaymentFill className="profile_icons"/> : {profile.PaymentMethod}</p>
+                                     <BiUserCircle  className="profile_icons"/> :  {profile.UserName}
+                                </p>
+                                <p> <FaFirefoxBrowser className="profile_icons"/> : {profile.DomainName}</p>
+                                <p><CgBrowse className="profile_icons"/> : <a className='profile_url' href={profile.URL}> {profile.URL}</a> </p>
+
                                 </div>
                             </div>
                         </div>

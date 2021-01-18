@@ -20,6 +20,7 @@ const App = ()  => {
       const response = await fetch(API_BASE);
       let data = await response.json();
       setProfiles(data.records.profiles);
+      console.log(data.records.profiles);
       setloading(false)
     }
     getProfiles();
@@ -63,7 +64,7 @@ const App = ()  => {
 };
 
   return (
-    <div className="container">
+    <div className="container-fluid">
       <h1 className='text-center'>Profiles</h1>
 
       <div >

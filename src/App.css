@@ -100,10 +100,18 @@ svg.profile_icons {
   font-size: 20px;
 }
 
+a.profile_url{
+  color: #00d;
+  overflow: hidden;
+}
+
 .middle{
   position: absolute;
   top: 50%;
-  /* transform: translate(-50%, -50%); */
+}
+
+.list-group-item {
+  padding: .75rem 1rem !important;
 }
 
 .front, .back{
@@ -141,4 +149,8 @@ svg.profile_icons {
 
 .page_card:hover > .back{
   transform: perspective( 600px) rotateY(0deg);
+}
+
+.page-link {
+  color: #000 !important;
 }
