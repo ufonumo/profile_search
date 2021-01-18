@@ -1,6 +1,7 @@
 import Spinner from 'react-bootstrap/Spinner';
 import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Dropdown from 'react-bootstrap/Dropdown';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import FormControl from 'react-bootstrap/FormControl';
@@ -58,21 +59,41 @@ export const Profiles = ({ profiles, loading, handleFilter} ) => {
 
                     <div className='row'>
                         <button className='col-lg-3 icons' value='All' onClick={handleFilter} >
-                            <BsFillPersonLinesFill/>
-                            <p>All users</p> 
+                            <BsFillPersonLinesFill/> <br></br>
+                            All users
                         </button>
                         <button className='col-lg-3 icons' onClick={handleFilter}  value='"Prefer to skip"'>
-                            <BsBagFill/>
-                           <p>Prefer to skip </p> 
+                            <BsBagFill/>  <br></br>
+                          Prefer to skip 
                         </button>
                         <button className='col-lg-3 icons pt-3' value='Female' onClick={handleFilter}>
-                            <FaFemale/>
-                         <p>Female</p> 
+                            <FaFemale/>  <br></br>
+                         Female
                         </button>
                         <button className='col-lg-3 icons pt-3' value='Male' onClick={handleFilter}>
-                            <FaMale/>
-                          <p>Male</p> 
+                            <FaMale/>  <br></br>
+                          Male
                         </button>
+                        <div className='col-lg-3  col-sm-12 text-center'>
+                            <Dropdown>
+                                <Dropdown.Toggle className='icons pt-3 ' id="dropdown-basic">
+                                <BiCreditCard/>  <br></br>
+                                    Payment Method
+                                </Dropdown.Toggle>
+
+                                <Dropdown.Menu>
+                                    <Dropdown.Item onClick={handleFilter}  value='"check"'>Check</Dropdown.Item>
+                                    <Dropdown.Item onClick={handleFilter} value='"cc"'>CC</Dropdown.Item>
+                                    <Dropdown.Item  onClick={handleFilter} value='"money order"'>Money Order</Dropdown.Item>
+                                    <Dropdown.Item onClick={handleFilter} value='"paypal"'>Pay pal</Dropdown.Item>
+                                </Dropdown.Menu>
+                            </Dropdown>
+                        </div>
+                
+                        {/* <button className='col-lg-3 icons pt-3' id="dropdown-basic" value='"money order"' onClick={handleFilter}>
+                            <BiCreditCard/>  <br></br>
+                          Credit Card Type
+                        </button> */}
                     </div>
                 </div>
             </div>

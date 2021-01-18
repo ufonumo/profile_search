@@ -89,15 +89,35 @@ p.details {
 }
 
 p.email {
-  font-size: 13.5px;
-}
-
-svg#profile_email{
   font-size: 16px;
 }
 
+svg#profile_email{
+  font-size: 25px;
+}
+
 svg.profile_icons {
-  font-size: 20px;
+  font-size: 30px;
+}
+
+.dropdown {
+  background: #7946C1 0% 0% no-repeat padding-box;
+  border-radius: 18px;
+
+}
+
+button#dropdown-basic{
+  background: #7946C1 0% 0% no-repeat padding-box;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 0;
+}
+
+.btn-primary.focus, .btn-primary:focus {
+
+  box-shadow: 0 0 0 !important;
 }
 
 a.profile_url{

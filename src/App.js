@@ -60,6 +60,11 @@ const App = ()  => {
         setProfiles(filtered);
         console.log(filtered);
     }
+    else if(filteredWord === '"money order"'){
+      const filtered = profiles.filter(item => item.PaymentMethod === 'money order')
+      setProfiles(filtered);
+      console.log(filtered);
+  }
     
 };
 
