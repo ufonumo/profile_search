@@ -80,7 +80,6 @@ const App = ()  => {
       const filtered = profiles.filter(item => item.PaymentMethod === 'paypal')
       setProfiles(filtered); 
       console.log(filtered);  
-   
     }
 };
 

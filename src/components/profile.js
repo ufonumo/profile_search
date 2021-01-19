@@ -80,7 +80,7 @@ export const Profiles = ({ profiles, loading, handleFilter} ) => {
                                 <Form.Label>  <BiCreditCard/> Payment Method</Form.Label>
                                 <Form.Control as="select"  onClick={handleFilter}>
                                     <option >Select a Payment Method</option>
-                                    <option value='"check"'>Check</option>
+                                    <option value='"check"'> Check</option>
                                     <option value='"cc"'>CC </option>
                                     <option  value='"money order"'> Money Order </option>
                                     <option value='"paypal"' >Pay pal</option>
@@ -88,11 +88,6 @@ export const Profiles = ({ profiles, loading, handleFilter} ) => {
                             </Form.Group>
 
                         </div>
-                
-                        {/* <button className='col-lg-3 icons pt-3' id="dropdown-basic" value='"money order"' onClick={handleFilter}>
-                            <BiCreditCard/>  <br></br>
-                          Credit Card Type
-                        </button> */}
                     </div>
                 </div>
             </div>
