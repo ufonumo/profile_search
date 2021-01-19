@@ -58,14 +58,30 @@ const App = ()  => {
     else if(filteredWord === '"Prefer to skip"'){
         const filtered = profiles.filter(item => item.Gender === 'Prefer to skip')
         setProfiles(filtered);
-        console.log(filtered);
     }
     else if(filteredWord === '"money order"'){
       const filtered = profiles.filter(item => item.PaymentMethod === 'money order')
-      setProfiles(filtered);
-      console.log(filtered);
-  }
-    
+      setProfiles(filtered);    
+      console.log(filtered);  
+
+    }
+    else if(filteredWord === '"cc"'){
+      const filtered = profiles.filter(item => item.PaymentMethod === 'cc')
+      setProfiles(filtered); 
+      console.log(filtered);  
+   
+    }
+    else if(filteredWord === '"check"'){
+      const filtered = profiles.filter(item => item.PaymentMethod === 'check')
+      setProfiles(filtered);  
+      console.log(filtered);  
+    }
+    else if(filteredWord === '"paypal"'){
+      const filtered = profiles.filter(item => item.PaymentMethod === 'paypal')
+      setProfiles(filtered); 
+      console.log(filtered);  
+   
+    }
 };
 
   return (

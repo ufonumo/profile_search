@@ -74,20 +74,19 @@ export const Profiles = ({ profiles, loading, handleFilter} ) => {
                             <FaMale/>  <br></br>
                           Male
                         </button>
-                        <div className='col-lg-3  col-sm-12 text-center'>
-                            <Dropdown>
-                                <Dropdown.Toggle className='icons pt-3 ' id="dropdown-basic">
-                                <BiCreditCard/>  <br></br>
-                                    Payment Method
-                                </Dropdown.Toggle>
+                        <div className=' col-lg-6 pt-3 col-sm-12 icons text-center'>
 
-                                <Dropdown.Menu>
-                                    <Dropdown.Item onClick={handleFilter}  value='"check"'>Check</Dropdown.Item>
-                                    <Dropdown.Item onClick={handleFilter} value='"cc"'>CC</Dropdown.Item>
-                                    <Dropdown.Item  onClick={handleFilter} value='"money order"'>Money Order</Dropdown.Item>
-                                    <Dropdown.Item onClick={handleFilter} value='"paypal"'>Pay pal</Dropdown.Item>
-                                </Dropdown.Menu>
-                            </Dropdown>
+                            <Form.Group controlId="exampleForm.ControlSelect1">
+                                <Form.Label>  <BiCreditCard/> Payment Method</Form.Label>
+                                <Form.Control as="select"  onClick={handleFilter}>
+                                    <option >Select a Payment Method</option>
+                                    <option value='"check"'>Check</option>
+                                    <option value='"cc"'>CC </option>
+                                    <option  value='"money order"'> Money Order </option>
+                                    <option value='"paypal"' >Pay pal</option>
+                                </Form.Control>
+                            </Form.Group>
+
                         </div>
                 
                         {/* <button className='col-lg-3 icons pt-3' id="dropdown-basic" value='"money order"' onClick={handleFilter}>

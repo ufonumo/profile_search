@@ -103,7 +103,7 @@ svg.profile_icons {
 .dropdown {
   background: #7946C1 0% 0% no-repeat padding-box;
   border-radius: 18px;
-
+  width: 100%;
 }
 
 button#dropdown-basic{
@@ -111,7 +111,7 @@ button#dropdown-basic{
   border: none;
   outline: none;
   cursor: pointer;
-  width: 100%;
+  width: 80%;
   border-radius: 0;
 }
 
@@ -174,3 +174,14 @@ a.profile_url{
 .page-link {
   color: #000 !important;
 }
+
+select.form-control, select.form-control:focus {
+  color: #fff;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+ select.form-control:focus{
+   color: #262A41;
+ }
