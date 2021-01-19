@@ -8,19 +8,20 @@ import { Pagination } from './components/pagination';
 const App = ()  => {
 
   const API_BASE = 'https://api.enye.tech/v1/challenge/records';
-
-  let [profiles, setProfiles] = useState([]);
+  
+  const [newProfiles, setNewProfiles] = useState([]);
+  let [profiles, setProfiles] = useState([]); //this sets the state
   let [loading, setloading] = useState(false);
   let [currentPage, setCurrentPage] = useState(1);
   let [profilePerPage] = useState(20);
 
   useEffect(()=>{
-    const getProfiles = async () =>{
+    const getProfiles = async () =>{ // this gets the profile data from the api
       setloading(true)
       const response = await fetch(API_BASE);
       let data = await response.json();
       setProfiles(data.records.profiles);
-      console.log(data.records.profiles);
+      setNewProfiles(data.records.profiles);
       setloading(false)
     }
     getProfiles();
@@ -37,49 +38,44 @@ const App = ()  => {
     setCurrentPage(pageNumber)
   };
 
-  const handleFilter = (e) =>{
+  const handleFilter = (e) =>{ // this filters the data according to the keyword values
     let filteredWord = e.target.value;
 
     if(filteredWord === 'All'){
-      setProfiles(profiles)
+      setProfiles(newProfiles)
         console.log(profiles);
         return profiles
         
     }
     else if(filteredWord === 'Female'){
-        const filtered = profiles.filter(item => item.Gender === 'Female')
+        const filtered = newProfiles.filter(item => item.Gender === 'Female')
         setProfiles(filtered)
     }
     else if(filteredWord === 'Male'){
-        const filtered = profiles.filter(item => item.Gender === 'Male')
+        const filtered = newProfiles.filter(item => item.Gender === 'Male')
         setProfiles(filtered);
 
     }
     else if(filteredWord === '"Prefer to skip"'){
-        const filtered = profiles.filter(item => item.Gender === 'Prefer to skip')
+        const filtered = newProfiles.filter(item => item.Gender === 'Prefer to skip')
         setProfiles(filtered);
     }
     else if(filteredWord === '"money order"'){
-      const filtered = profiles.filter(item => item.PaymentMethod === 'money order')
+      const filtered = newProfiles.filter(item => item.PaymentMethod === 'money order')
       setProfiles(filtered);    
-      console.log(filtered);  
-
     }
     else if(filteredWord === '"cc"'){
-      const filtered = profiles.filter(item => item.PaymentMethod === 'cc')
+      const filtered = newProfiles.filter(item => item.PaymentMethod === 'cc')
       setProfiles(filtered); 
-      console.log(filtered);  
    
     }
     else if(filteredWord === '"check"'){
-      const filtered = profiles.filter(item => item.PaymentMethod === 'check')
+      const filtered = newProfiles.filter(item => item.PaymentMethod === 'check')
       setProfiles(filtered);  
-      console.log(filtered);  
     }
     else if(filteredWord === '"paypal"'){
-      const filtered = profiles.filter(item => item.PaymentMethod === 'paypal')
+      const filtered = newProfiles.filter(item => item.PaymentMethod === 'paypal')
       setProfiles(filtered); 
-      console.log(filtered);  
     }
 };
 
