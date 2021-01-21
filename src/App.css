@@ -85,6 +85,7 @@ p.details {
 .col-lg-4.user {
   border-radius: 20px;
   margin-bottom: 2.1rem;
+  overflow: hidden;
   box-shadow: 10px 10px 40px #0000000D;
 }
 
@@ -126,8 +127,8 @@ a.profile_url{
 }
 
 .middle{
-  position: absolute;
-  top: 50%;
+  position: relative;
+  /* top: 50%; */
 }
 
 .list-group-item {
@@ -146,8 +147,15 @@ a.profile_url{
 .back_content{
   background: #fff 0% 0% no-repeat ;
   height: 100%;
-  position: relative;
-  top: -100%;
+  position: absolute;
+  top: 0%;
+  width: 90%;
+}
+
+@media(max-width: 768px){
+  .back_content {
+    width: 92% !important;
+}
 }
 
 .front.back{

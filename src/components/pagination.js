@@ -14,7 +14,7 @@ export const Pagination = ({profilePerPage, totalProfiles, paginate}) => {
             <ul className='pagination mx-auto'>
                 {pageNumbers.map(number =>(
                     <li key={number} className='page-item mx-auto'>
-                        <a onClick={() => paginate(number)} href='!#' className='page-link'>
+                        <a onClick={() => paginate(number)} className='page-link'>
                             {number}
                         </a>
                     </li>

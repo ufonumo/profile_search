@@ -47,7 +47,7 @@ export const Profiles = ({ profiles, loading, handleFilter} ) => {
         <div className='row profile'>
 
             <div className='col-lg-4 form_search'>
-                <p className='details'>Welcome to your dashboard, kindly sort through the user base</p>
+                <p className='details'>Welcome to your dashboard, kindly sort through the user database by searching for a user, or using the options below to filter for users based on their gender, or payment methods</p>
                 <Form inline onSubmit={getSearch} className='search_form justify-content-center'>
                     <FormControl type="text" value={search} onChange={updateSearch} placeholder='Search for a patient' className="mr-sm-2 search_bar" />
                     <Button  type="submit" className="form_button" variant="outline-success"> <AiOutlineSearch/> </Button>
